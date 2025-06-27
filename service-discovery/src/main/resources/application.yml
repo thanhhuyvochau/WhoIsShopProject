@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Service Discovery
+server:
+  port: 8761
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false

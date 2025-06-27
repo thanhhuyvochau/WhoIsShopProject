@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Your Account</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
+<table width="100%"
+       style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 6px; padding: 20px;">
+    <tr>
+        <td>
+            <h2 style="color: #333;">Hello ${firstName} ${lastName},</h2>
+            <p>Thank you for registering with us!</p>
+            <p><strong>Your account information:</strong></p>
+            <ul>
+                <li><strong>Username:</strong> ${userName}</li>
+                <li><strong>Email:</strong> ${email}</li>
+                <li><strong>Phone:</strong> ${phone}</li>
+            </ul>
+            <p>To activate your account, please click the button below:</p>
+            <p style="text-align: center;">
+                <a href="${verifyURL}"
+                   style="display: inline-block; padding: 12px 24px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 4px;">
+                    Verify Account
+                </a>
+            </p>
+            <p>If the button doesn't work, copy and paste this URL into your browser:</p>
+            <p><a href="${verifyURL}" style="color: #007BFF;">${verifyURL}</a></p>
+            <p style="margin-top: 30px;">If you did not request this email, you can safely ignore it.</p>
+            <p>Best regards,<br>Your Team</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
