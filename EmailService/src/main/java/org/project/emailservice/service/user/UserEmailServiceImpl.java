@@ -15,20 +15,19 @@ import java.util.Map;
 @Component
 public class UserEmailServiceImpl implements UserEmailService {
     private final EmailService emailService;
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper jsonMapper;
 
     public UserEmailServiceImpl(EmailService emailService, ObjectMapper objectMapper) {
         this.emailService = emailService;
-        this.objectMapper = objectMapper;
+        this.jsonMapper = objectMapper;
     }
 
     @Override
     public void sendVerificationEmail(EmailInfo emailInfo) {
-        ObjectMapper mapper = new ObjectMapper();
         // Sending Email
         Map<String, Object> dataMap = (Map<String, Object>) emailInfo.getData();
 
-        UserEmailInfo userEmailInfo = mapper.convertValue(dataMap, UserEmailInfo.class);
+        UserEmailInfo userEmailInfo = jsonMapper.convertValue(dataMap, UserEmailInfo.class);
         String emailTemplate = ResourceUtil.emailTemplateLoader("verify-account.html");
         String msg = emailTemplate
                 .replace("${firstName}", userEmailInfo.getFirstName())
